@@ -1,0 +1,45 @@
+@use "../base/variables" as variable;
+@use "sass:map";
+@use "../utilities/maps" as maps;
+@use "../utilities/mixin" as mixin;
+@use "../utilities/animations" as anim;
+
+.hero-container {
+  @include mixin.flex(flex, center, center);
+  padding: variable.$padding-general;
+  padding-top: variable.$padding-top;
+
+  .hero {
+    @include mixin.flex(flex, center, center);
+    flex-direction: column;
+    background-color: map.get(maps.$colores, primary-color);
+    text-align: center;
+
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0.5rem;
+    .image-hero {
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      background-image: url("../img/hero-image.jpeg");
+      background-size: cover;
+      background-position: center;
+      @include anim.fade-in(1s);
+    }
+
+    .hero-tittle {
+      font-size: 2rem;
+      text-transform: uppercase;
+      text-decoration: underline solid map.get(maps.$colores, second-color);
+      padding-top: 1rem;
+      @include anim.slide-up(1s);
+    }
+    .hero-description {
+      padding-top: 4rem;
+      padding: 1rem;
+      @include anim.fade-in(1s);
+    }
+  }
+}

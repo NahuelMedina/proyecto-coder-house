@@ -1,0 +1,17 @@
+@media (max-width: 991px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header .hamburguesa {
+    display: block;
+    font-size: xx-large;
+    cursor: pointer;
+  }
+
+  header .nav-container .menu {
+    display: none;
+  }
+}

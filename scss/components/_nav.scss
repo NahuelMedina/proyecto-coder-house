@@ -1,0 +1,46 @@
+@use "../base/variables" as variable;
+@use "sass:map";
+@use "../utilities/maps.scss" as maps;
+@use "../utilities/mixin";
+header {
+  width: 100%;
+  position: fixed;
+  // background-color: map.get(maps.$colores, nav-background);
+  background: linear-gradient(
+    map.get(maps.$colores, color-background),
+    map.get(maps.$colores, nav-background)
+  );
+  border-bottom: 2px solid map.get(maps.$colores, primary-color);
+  padding: variable.$padding-general;
+
+  .nav-container {
+    @include mixin.flex(flex, center, center);
+    height: 5rem;
+    .nav-img {
+      display: none;
+      width: 4rem;
+    }
+    .nav-ul {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      #visited {
+        color: map.get(maps.$colores, tertiary-color);
+        text-decoration: underline solid map.get(maps.$colores, tertiary-color);
+      }
+      li {
+        a {
+          color: map.get(maps.$colores, second-color);
+          font-size: 1.3rem;
+
+          &:hover {
+            color: map.get(maps.$colores, tertiary-color);
+          }
+        }
+      }
+    }
+  }
+  .hamburguesa {
+    display: none;
+  }
+}

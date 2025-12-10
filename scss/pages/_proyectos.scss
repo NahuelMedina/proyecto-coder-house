@@ -1,0 +1,5 @@
+@use "../base/variables" as variable;
+.proyectos-container {
+  padding: variable.$padding-general;
+  padding-top: variable.$padding-top;
+}

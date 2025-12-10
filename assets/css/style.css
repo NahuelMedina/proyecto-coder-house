@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  color: #948979;
+}
+* .body-background {
+  background-color: #222831;
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  background: linear-gradient(#222831, rgba(34, 40, 49, 0.7411764706));
+  border-bottom: 2px solid #393e46;
+  padding: 0px 40px;
+}
+header .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+}
+header .nav-container .nav-img {
+  display: none;
+  width: 4rem;
+}
+header .nav-container .nav-ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+header .nav-container .nav-ul #visited {
+  color: #dfd0b8;
+  text-decoration: underline solid #dfd0b8;
+}
+header .nav-container .nav-ul li a {
+  color: #948979;
+  font-size: 1.3rem;
+}
+header .nav-container .nav-ul li a:hover {
+  color: #dfd0b8;
+}
+header .hamburguesa {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 40px;
+  padding-top: 6rem;
+}
+.hero-container .hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #393e46;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0.5rem;
+}
+.hero-container .hero .image-hero {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-image: url("../img/hero-image.jpeg");
+  background-size: cover;
+  background-position: center;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0s;
+}
+.hero-container .hero .hero-tittle {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: underline solid #948979;
+  padding-top: 1rem;
+  animation: slideUp 1s ease forwards;
+  animation-delay: 0s;
+}
+.hero-container .hero .hero-description {
+  padding-top: 4rem;
+  padding: 1rem;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0s;
+}
+
+.sobremi-container {
+  display: flex;
+  align-items: center;
+  padding: 0px 40px;
+  padding-top: 6rem;
+}
+.sobremi-container .sobremi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 55vw;
+  padding: 1rem;
+}
+.sobremi-container .sobremi-div-img {
+  width: 45vw;
+}
+.sobremi-container .sobremi-div-img .sobremi-img {
+  width: 100%;
+}
+
+.contacto-container {
+  padding: 0px 40px;
+  padding-top: 6rem;
+}
+.contacto-container .contacto-form-container form input {
+  background-color: #393e46;
+}
+.contacto-container .contacto-form-container form textarea {
+  resize: none;
+  background-color: #393e46;
+}
+.contacto-container .contacto-form-container form button {
+  height: 2rem;
+  border-radius: 0.2rem;
+  color: #393e46;
+  background-color: #948979;
+}
+.contacto-container .contacto-form-container form button:hover {
+  background-color: #dfd0b8;
+}
+
+.educacion-container {
+  padding: 0px 40px;
+  padding-top: 6rem;
+  width: 100vw;
+  display: flex;
+}
+.educacion-container .educacion-div1 {
+  width: 50vw;
+}
+.educacion-container .educacion-div1 h2 {
+  text-transform: uppercase;
+}
+.educacion-container .educacion-div2 {
+  width: 50vw;
+}
+
+.proyectos-container {
+  padding: 0px 40px;
+  padding-top: 6rem;
+}
+
+@media (max-width: 991px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .hamburguesa {
+    display: block;
+    font-size: xx-large;
+    cursor: pointer;
+  }
+  header .nav-container .menu {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

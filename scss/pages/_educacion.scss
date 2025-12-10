@@ -1,0 +1,17 @@
+@use "../base/variables" as variable;
+
+.educacion-container {
+  padding: variable.$padding-general;
+  padding-top: variable.$padding-top;
+  width: 100vw;
+  display: flex;
+  .educacion-div1 {
+    width: 50vw;
+    h2 {
+      text-transform: uppercase;
+    }
+  }
+  .educacion-div2 {
+    width: 50vw;
+  }
+}
