@@ -1,12 +1,11 @@
 @use "../base/variables" as variable;
 @use "sass:map";
 @use "../utilities/maps" as maps;
-@use "../utilities/mixin" as mixin;
+@use "../utilities/mixin";
 @use "../utilities/animations" as anim;
-
 .hero-container {
   @include mixin.flex(flex, center, center);
-  padding: variable.$padding-general;
+
   padding-top: variable.$padding-top;
 
   .hero {
@@ -14,23 +13,37 @@
     flex-direction: column;
     background-color: map.get(maps.$colores, primary-color);
     text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 80vh;
+    margin: 0 auto;
+    border-radius: 0.3rem;
+    box-shadow: variable.$shadow-box;
+    transition: transform 0.2s ease-in, box-shadow 0.2s ease-in;
 
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0.5rem;
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
     .image-hero {
       width: 10rem;
       height: 10rem;
+      max-width: 100%;
       border-radius: 50%;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      box-shadow: variable.$shadow-box;
       background-image: url("../img/hero-image.png");
       background-size: cover;
       background-position: center;
+      transition: transform 0.2s ease-in;
       @include anim.fade-in(1s);
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
     .hero-tittle {
-      font-size: 2rem;
+      font-size: 1.5rem;
       text-transform: uppercase;
       text-decoration: underline solid map.get(maps.$colores, second-color);
       padding-top: 1rem;
@@ -39,7 +52,20 @@
     .hero-description {
       padding-top: 4rem;
       padding: 1rem;
+      max-width: 800px;
       @include anim.fade-in(1s);
+    }
+    button {
+      @include mixin.button(
+        100px,
+        1rem,
+        map.get(maps.$colores, second-color),
+        map.get(maps.$colores, tertiary-color),
+        map.get(maps.$colores, tertiary-color)
+      );
+      &:hover {
+        box-shadow: 4px 5px 0px 0px map.get(maps.$colores, tertiary-color);
+      }
     }
   }
 }

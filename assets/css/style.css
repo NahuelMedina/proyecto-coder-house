@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,49 +7,67 @@
   text-decoration: none;
   border: none;
   outline: none;
-  color: #948979;
-}
-* .body-background {
-  background-color: #222831;
-  height: 100%;
-  width: 100%;
+  color: #e3eaef;
 }
 
-header {
-  width: 100%;
-  position: fixed;
-  background: linear-gradient(#222831, rgba(34, 40, 49, 0.7411764706));
-  border-bottom: 2px solid #393e46;
-  padding: 0px 40px;
+body {
+  background-color: #e2e2e2;
 }
-header .nav-container {
+body .layout {
+  background-color: #5e6069;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  background-color: rgba(65, 67, 71, 0.6980392157);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.nav-container .header-inner {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 5rem;
+  padding: 0.5rem 1rem;
 }
-header .nav-container .nav-img {
-  display: none;
-  width: 4rem;
+.nav-container .nav-img {
+  width: 60px;
+  height: auto;
 }
-header .nav-container .nav-ul {
+.nav-container .nav-ul {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  gap: 1.5rem;
 }
-header .nav-container .nav-ul #visited {
-  color: #dfd0b8;
-  text-decoration: underline solid #dfd0b8;
+.nav-container .nav-ul .nav-link {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #e3eaef;
 }
-header .nav-container .nav-ul li a {
-  color: #948979;
-  font-size: 1.3rem;
+.nav-container .nav-ul .nav-link.active, .nav-container .nav-ul .nav-link:hover {
+  color: #80a53c;
 }
-header .nav-container .nav-ul li a:hover {
-  color: #dfd0b8;
-}
-header .hamburguesa {
-  display: none;
+.nav-container .navbar-toggler {
+  position: absolute;
+  right: 1rem;
+  box-shadow: none !important;
 }
 
 @keyframes fadeIn {
@@ -72,19 +90,16 @@ header .hamburguesa {
 }
 @keyframes zoomIn {
   from {
-    transform: scale(0.85);
-    opacity: 0;
+    transform: scale(1);
   }
   to {
-    transform: scale(1);
-    opacity: 1;
+    transform: scale(1.1);
   }
 }
 .hero-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0px 40px;
   padding-top: 6rem;
 }
 .hero-container .hero {
@@ -92,27 +107,40 @@ header .hamburguesa {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #393e46;
+  background-color: #5e6069;
   text-align: center;
-  width: 100vw;
-  height: 100vh;
-  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 80vh;
+  margin: 0 auto;
+  border-radius: 0.3rem;
+  box-shadow: rgba(0, 0, 0, 0.08) 0 4px 20px;
+  transition: transform 0.2s ease-in, box-shadow 0.2s ease-in;
+}
+.hero-container .hero:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 .hero-container .hero .image-hero {
   width: 10rem;
   height: 10rem;
+  max-width: 100%;
   border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0 4px 20px;
   background-image: url("../img/hero-image.png");
   background-size: cover;
   background-position: center;
+  transition: transform 0.2s ease-in;
   animation: fadeIn 1s ease forwards;
   animation-delay: 0s;
 }
+.hero-container .hero .image-hero:hover {
+  transform: scale(1.1);
+}
 .hero-container .hero .hero-tittle {
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
-  text-decoration: underline solid #948979;
+  text-decoration: underline solid #e3eaef;
   padding-top: 1rem;
   animation: slideUp 1s ease forwards;
   animation-delay: 0s;
@@ -120,20 +148,38 @@ header .hamburguesa {
 .hero-container .hero .hero-description {
   padding-top: 4rem;
   padding: 1rem;
+  max-width: 800px;
   animation: fadeIn 1s ease forwards;
   animation-delay: 0s;
+}
+.hero-container .hero button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0px 0px #80a53c;
+  width: 100px;
+  height: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background-color: #e3eaef;
+  font-size: medium;
+  font-weight: 600;
+  color: #80a53c;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.hero-container .hero button:hover {
+  box-shadow: 4px 5px 0px 0px #80a53c;
 }
 
 .sobremi-container {
   display: flex;
   align-items: center;
-  padding: 0px 40px;
   padding-top: 6rem;
 }
 .sobremi-container .sobremi {
-  display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
   width: 55vw;
   padding: 1rem;
 }
@@ -145,30 +191,37 @@ header .hamburguesa {
 }
 
 .contacto-container {
-  padding: 0px 40px;
   padding-top: 6rem;
 }
 .contacto-container .contacto-form-container form input {
-  background-color: #393e46;
+  background-color: #5e6069;
 }
 .contacto-container .contacto-form-container form textarea {
   resize: none;
-  background-color: #393e46;
+  background-color: #5e6069;
 }
 .contacto-container .contacto-form-container form button {
-  height: 2rem;
-  border-radius: 0.2rem;
-  color: #393e46;
-  background-color: #948979;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0px 0px #80a53c;
+  width: 100px;
+  height: 1rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background-color: #e3eaef;
+  font-size: medium;
+  font-weight: 600;
+  color: #80a53c;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 .contacto-container .contacto-form-container form button:hover {
-  background-color: #dfd0b8;
+  box-shadow: 4px 5px 0px 0px;
 }
 
 .educacion-container {
-  padding: 0px 40px;
   padding-top: 6rem;
-  width: 100vw;
   display: flex;
 }
 .educacion-container .educacion-div1 {
@@ -182,7 +235,6 @@ header .hamburguesa {
 }
 
 .proyectos-container {
-  padding: 0px 40px;
   padding-top: 6rem;
 }
 
@@ -200,6 +252,9 @@ header .hamburguesa {
   header .nav-container .menu {
     display: none;
   }
+}
+body {
+  font-family: "Nunito Sans", sans-serif;
 }
 
 /*# sourceMappingURL=style.css.map */

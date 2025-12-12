@@ -1,8 +1,8 @@
 @use "../base/variables" as variable;
 @use "sass:map";
 @use "../utilities/maps.scss" as maps;
+@use "../utilities/mixin";
 .contacto-container {
-  padding: variable.$padding-general;
   padding-top: variable.$padding-top;
 
   .contacto-form-container {
@@ -10,18 +10,23 @@
       input {
         background-color: map.get(maps.$colores, primary-color);
       }
+
       textarea {
         resize: none;
         background-color: map.get(maps.$colores, primary-color);
       }
+
       button {
-        height: 2rem;
-        border-radius: 0.2rem;
-        color: map.get(maps.$colores, primary-color);
-        background-color: map.get(maps.$colores, second-color);
-      }
-      button:hover {
-        background-color: map.get(maps.$colores, tertiary-color);
+        @include mixin.button(
+          100px,
+          1rem,
+          map.get(maps.$colores, second-color),
+          map.get(maps.$colores, tertiary-color),
+          map.get(maps.$colores, tertiary-color)
+        );
+        &:hover {
+          box-shadow: 4px 5px 0px 0px map.get(maps.$colores, contrast-color);
+        }
       }
     }
   }

@@ -3,3 +3,24 @@
   align-items: $align;
   justify-content: $justify;
 }
+
+@mixin button($widht, $height, $bg, $color, $contrast) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0px 0px $contrast;
+  width: $widht;
+  height: $height;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background-color: $bg;
+  font-size: medium;
+  font-weight: 600;
+  color: $color;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+@mixin buttonHover($bg) {
+  background-color: $bg;
+}

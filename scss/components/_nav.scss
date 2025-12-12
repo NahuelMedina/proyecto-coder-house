@@ -2,45 +2,107 @@
 @use "sass:map";
 @use "../utilities/maps.scss" as maps;
 @use "../utilities/mixin";
-header {
-  width: 100%;
+// header {
+//   position: fixed;
+//   z-index: 10;
+//   top: 0;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   width: 100%;
+//   max-width: variable.$width-maximo-pc;
+
+//   .nav-container {
+//     @include mixin.flex(flex, center, center);
+
+//     height: 5rem;
+//     background: linear-gradient(
+//       180deg,
+//       map.get(maps.$colores, nav-background) 100%
+//     );
+//     border-bottom: 2px solid map.get(maps.$colores, tertiary-color);
+//     .nav-img {
+//       display: none;
+//       width: 4rem;
+//     }
+//     .nav-ul {
+//       display: flex;
+//       align-items: center;
+//       gap: 20px;
+//       li {
+//         a {
+//           color: map.get(maps.$colores, second-color);
+//           font-size: 1.2rem;
+
+//           &:hover {
+//             color: map.get(maps.$colores, tertiary-color);
+//           }
+//           &.active {
+//             color: map.get(maps.$colores, tertiary-color);
+//             text-decoration: underline solid
+//               map.get(maps.$colores, tertiary-color);
+//           }
+//         }
+//       }
+//     }
+//   }
+//   .hamburguesa {
+//     display: none;
+//   }
+// }
+// Header centrado y fijo
+.header-fixed {
   position: fixed;
-  // background-color: map.get(maps.$colores, nav-background);
-  background: linear-gradient(
-    map.get(maps.$colores, color-background),
-    map.get(maps.$colores, nav-background)
-  );
-  border-bottom: 2px solid map.get(maps.$colores, primary-color);
-  padding: variable.$padding-general;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: variable.$width-maximo-pc;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  background-color: map.get(maps.$colores, nav-background);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-  .nav-container {
-    @include mixin.flex(flex, center, center);
-    height: 5rem;
-    .nav-img {
-      display: none;
-      width: 4rem;
-    }
-    .nav-ul {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      #visited {
+// Contenedor de navegación
+.nav-container {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  .header-inner {
+    width: variable.$width-maximo-pc;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-img {
+    width: 60px;
+    height: auto;
+  }
+
+  .nav-ul {
+    display: flex;
+    gap: 1.5rem;
+
+    .nav-link {
+      font-weight: 500;
+      font-size: 1rem;
+      color: map.get(maps.$colores, second-color);
+
+      &.active,
+      &:hover {
         color: map.get(maps.$colores, tertiary-color);
-        text-decoration: underline solid map.get(maps.$colores, tertiary-color);
-      }
-      li {
-        a {
-          color: map.get(maps.$colores, second-color);
-          font-size: 1.3rem;
-
-          &:hover {
-            color: map.get(maps.$colores, tertiary-color);
-          }
-        }
       }
     }
   }
-  .hamburguesa {
-    display: none;
+
+  .navbar-toggler {
+    position: absolute;
+    right: 1rem;
+    box-shadow: none !important;
   }
 }

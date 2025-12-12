@@ -1,7 +1,7 @@
 @use "../base/variables" as variable;
 @use "sass:map";
 @use "../utilities/maps.scss" as maps;
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+@use "../utilities/mixin" as mixin;
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,9 +11,14 @@
   border: none;
   outline: none;
   color: map.get(maps.$colores, second-color);
-  .body-background {
-    background-color: map.get(maps.$colores, color-background);
-    height: 100%;
+}
+body {
+  background-color: map.get(maps.$colores, color-background);
+  .layout {
+    background-color: map.get(maps.$colores, primary-color);
     width: 100%;
+    max-width: variable.$width-maximo-pc;
+    margin: 0 auto;
+    padding: variable.$padding-general;
   }
 }
