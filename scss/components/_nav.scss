@@ -56,12 +56,15 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: variable.$width-maximo-pc;
+  max-width: variable.$width-layout;
   display: flex;
   justify-content: center;
   z-index: 1000;
   background-color: map.get(maps.$colores, nav-background);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 3px solid map.get(maps.$colores, tertiary-color);
+  border-top: none;
+  border-bottom: none;
 }
 
 // Contenedor de navegación
@@ -70,7 +73,7 @@
   padding-bottom: 0.5rem;
 
   .header-inner {
-    width: variable.$width-maximo-pc;
+    width: variable.$width-layout;
     max-width: 100%;
     margin: 0 auto;
     display: flex;

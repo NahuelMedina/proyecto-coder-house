@@ -17,8 +17,11 @@ body {
   .layout {
     background-color: map.get(maps.$colores, primary-color);
     width: 100%;
-    max-width: variable.$width-maximo-pc;
+    max-width: variable.$width-layout;
     margin: 0 auto;
     padding: variable.$padding-general;
+    border: 3px solid map.get(maps.$colores, tertiary-color);
+    border-top: none;
+    border-bottom: none;
   }
 }

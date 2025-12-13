@@ -13,33 +13,18 @@
 }
 
 // Slide up
-@mixin slide-up($time: 0.8s, $delay: 0s) {
+@mixin slide-right($time: 0.8s, $delay: 0s) {
   animation: slideUp $time ease forwards;
   animation-delay: $delay;
 }
 
-@keyframes slideUp {
+@keyframes slideRight {
   from {
     transform: translateX(-40px);
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
-  }
-}
-
-// Zoom in
-@mixin zoom-in($time: 0.8s, $delay: 0s) {
-  animation: zoomIn $time ease forwards;
-  animation-delay: $delay;
-}
-
-@keyframes zoomIn {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
   }
 }

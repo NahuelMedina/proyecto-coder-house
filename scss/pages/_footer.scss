@@ -1,0 +1,38 @@
+@use "../base/variables" as variable;
+@use "sass:map";
+@use "../utilities/maps" as maps;
+
+.footer {
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  .footer-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    .footer-redes {
+      display: flex;
+      gap: 1rem;
+
+      a {
+        font-size: 1.3rem;
+        color: map.get(maps.$colores, second-color);
+        transition: color 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+          color: map.get(maps.$colores, tertiary-color);
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+  p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+}

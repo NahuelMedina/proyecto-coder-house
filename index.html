@@ -13,6 +13,9 @@
     <!-- CSS COMPILADO -->
 
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- FRAMEWORK DE SCROLL -->
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <script
       src="https://kit.fontawesome.com/0f16c4b290.js"
       crossorigin="anonymous"
@@ -50,7 +53,7 @@
                   <a href="#hero" class="nav-link active">Inicio</a>
                 </li>
                 <li class="nav-item">
-                  <a href="#sobremi" class="nav-link">Sobre mí</a>
+                  <a href="#sobre-mi" class="nav-link">Sobre mí</a>
                 </li>
                 <li class="nav-item">
                   <a href="#educacion" class="nav-link">Educación</a>
@@ -68,138 +71,207 @@
       </header>
       <section class="hero-container" id="hero">
         <div class="container">
-          <div class="hero">
-            <div class="image-hero"></div>
-            <h1 class="hero-tittle"><b>Nahuel Medina</b></h1>
-            <h3 class="hero-description">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque
-              architecto ex quibusdam sapiente id quasi dolorem voluptatem aut
-              soluta unde impedit, nisi at magni ipsa necessitatibus rerum iste!
-              Tempora, deleniti.
-            </h3>
-            <button class="button">CV</button>
+          <div class="hero" data-aos="fade-up">
+            <div class="card-animation">
+              <div class="image-hero"></div>
+              <h1 class="hero-tittle"><b>Nahuel Medina</b></h1>
+              <h3 class="hero-description">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque
+                architecto ex quibusdam sapiente id quasi dolorem voluptatem aut
+                soluta unde impedit, nisi at magni ipsa necessitatibus rerum
+                iste! Tempora, deleniti.
+              </h3>
+              <button class="button">CV</button>
+            </div>
           </div>
         </div>
       </section>
       <!-- SOBRE MI -->
-      <section class="sobremi-container" id="sobremi">
-        <div class="sobremi">
-          <h2 class="sobremi-h2">Sobre mí</h2>
-          <p class="sobremi-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam at
-            facere, eius tempora cum quisquam nisi corrupti harum! Dicta rem
-            fugit rerum enim. Ea exercitationem cum eaque distinctio nam!
-            Accusantium.
-          </p>
-        </div>
-        <div class="sobremi-div-img">
-          <img src="../assets/img/ejemplo.png" alt="" class="sobremi-img" />
+      <section class="sobre-mi" id="sobre-mi" data-aos="fade-right">
+        <div class="sobre-mi__container">
+          <div class="sobre-mi__texto">
+            <h2>Un poco de mí</h2>
+            <p>
+              Soy un desarrollador web en formación, apasionado por crear
+              interfaces limpias, funcionales y fáciles de usar. Me gusta
+              aprender nuevas tecnologías y aplicar buenas prácticas en cada
+              proyecto.
+            </p>
+            <p>
+              Mi objetivo es convertirme en un profesional sólido y seguir
+              creciendo en el mundo del desarrollo.
+            </p>
+          </div>
+
+          <div class="sobre-mi__img" data-aos="fade-left">
+            <img src="./assets/img/ejemplo.png" alt="Foto de perfil" />
+          </div>
         </div>
       </section>
       <!-- EDUCACION -->
       <section class="educacion-container" id="educacion">
-        <div class="educacion-div1">
-          <h2><b>Educación</b></h2>
-        </div>
-        <div class="educacion-div2">
-          <div>
-            <p>2033 - 2560</p>
-            <div>
-              <h3>Nombre de institución</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Accusantium dignissimos inventore, ratione vitae dicta laborum
-                doloremque, blanditiis, qui repellendus distinctio quidem alias
-                vel culpa optio minima? Quaerat excepturi voluptates ipsum.
-              </p>
-            </div>
+        <div class="educacion-wrapper">
+          <div class="educacion-div1" data-aos="fade-right">
+            <h2><b>Educación</b></h2>
           </div>
-          <div>
-            <p>2033 - 2560</p>
+          <div class="educacion-div2" data-aos="fade-up">
             <div>
-              <h3>Nombre de institución</h3>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam
-                cupiditate minus facilis aut ullam amet consequuntur in magni
-                earum quam, itaque cum, tempore at, dolorum tenetur cumque
-                minima rerum reiciendis?
-              </p>
+              <p>2033 - 2560</p>
+              <div>
+                <h3>Nombre de institución</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusantium dignissimos inventore, ratione vitae dicta laborum
+                  doloremque, blanditiis, qui repellendus distinctio quidem
+                  alias vel culpa optio minima? Quaerat excepturi voluptates
+                  ipsum.
+                </p>
+              </div>
+            </div>
+            <div>
+              <p>2033 - 2560</p>
+              <div>
+                <h3>Nombre de institución</h3>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Totam cupiditate minus facilis aut ullam amet consequuntur in
+                  magni earum quam, itaque cum, tempore at, dolorum tenetur
+                  cumque minima rerum reiciendis?
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
       <!-- PROYECTOS -->
       <section class="proyectos-container" id="proyectos">
-        <div class="card-proyect">
-          <a href=""><img src="../assets/img/ejemplo.png" alt="" /></a>
-          <h3>Nombre</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            eligendi amet magni numquam commodi veritatis praesentium ut lau
-          </p>
-        </div>
-        <div>
-          <a href=""><img src="../assets/img/ejemplo.png" alt="" /></a>
-          <h3>Nombre</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            eligendi amet magni numquam commodi veritatis praesentium ut lau
-          </p>
-        </div>
-        <div>
-          <a href=""><img src="../assets/img/ejemplo.png" alt="" /></a>
-          <h3>Nombre</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            eligendi amet magni numquam commodi veritatis praesentium ut lau
-          </p>
-        </div>
-        <div>
-          <a href=""><img src="../assets/img/ejemplo.png" alt="" /></a>
-          <h3>Nombre</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-            eligendi amet magni numquam commodi veritatis praesentium ut lau
-          </p>
+        <div class="proyectos-wrapper">
+          <div class="card-proyect" data-aos="fade-up" data-aos-duration="900">
+            <a href=""><img src="../assets/img/ejemplo.png" alt="" /></a>
+            <h3>Nombre</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+              eligendi amet magni numquam commodi veritatis praesentium ut lau
+            </p>
+            <div class="card-buttons">
+              <a href="#" class="btn">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Demo</a
+              >
+              <a href="#" class="btn">
+                <i class="fa-brands fa-github"></i>
+                GitHub</a
+              >
+            </div>
+          </div>
+          <div class="card-proyect" data-aos="fade-up" data-aos-duration="900">
+            <a href=""><img src="../assets/img/ejemplo.png" alt="" /></a>
+            <h3>Nombre</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+              eligendi amet magni numquam commodi veritatis praesentium ut lau
+            </p>
+            <div class="card-buttons">
+              <a href="#" class="btn">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Demo</a
+              >
+              <a href="#" class="btn">
+                <i class="fa-brands fa-github"></i>
+                GitHub</a
+              >
+            </div>
+          </div>
+          <div class="card-proyect" data-aos="fade-up" data-aos-duration="900">
+            <a href=""><img src="../assets/img/ejemplo.png" alt="" /></a>
+            <h3>Nombre</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+              eligendi amet magni numquam commodi veritatis praesentium ut lau
+            </p>
+            <div class="card-buttons">
+              <a href="#" class="btn">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Demo</a
+              >
+              <a href="#" class="btn">
+                <i class="fa-brands fa-github"></i>
+                GitHub</a
+              >
+            </div>
+          </div>
         </div>
       </section>
       <!-- CONTACTO -->
       <section class="contacto-container" id="contacto">
-        <h2>Contacto</h2>
-        <div class="contacto-redes">
-          <h3 class="contacto-redes-h3">Mis Redes</h3>
-          <div class="contacto-redes-logos-container">
-            <img src="" alt="" />
-            <img src="" alt="" />
-            <img src="" alt="" />
-            <img src="" alt="" />
+        <div class="contacto-wrapper">
+          <!-- REDES -->
+          <h2 class="contacto-title">Contacto</h2>
+          <div class="contacto-grid" data-aos="fade-right">
+            <div class="contacto-redes">
+              <h3>Mis Redes</h3>
+              <div class="contacto-redes-logos">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- FORMULARIO -->
+          <div class="contacto-form-container">
+            <form>
+              <label>
+                Nombre
+                <input type="text" required />
+              </label>
+
+              <label>
+                Email
+                <input type="email" required />
+              </label>
+
+              <label>
+                Mensaje
+                <textarea rows="4"></textarea>
+              </label>
+
+              <button type="submit" class="button">Enviar</button>
+            </form>
           </div>
         </div>
-        <div class="contacto-form-container">
-          <form action="">
-            <label for="name"
-              >Nombre
-              <input type="text" name="name" id="name" required />
-            </label>
-            <label for="last-name"
-              >Apellido
-              <input type="text" name="last-name" id="last-name" required />
-            </label>
-            <label for="email"
-              >Email
-              <input type="email" name="email" id="email" required />
-            </label>
-            <label for="mensaje"
-              >Mensaje
-              <textarea name="mensaje" id="mensaje"></textarea>
-            </label>
-            <button type="submit" class="button">Enviar</button>
-          </form>
-        </div>
       </section>
+      <footer class="footer">
+        <div class="footer-wrapper">
+          <p>
+            © <span id="year"></span> Nahuel Medina — Desarrollador Frontend
+          </p>
+
+          <div class="footer-redes">
+            <a href="#" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="#" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="#" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
     <script src="./assets/js/nav.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/nav.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 120,
+      });
+    </script>
   </body>
 </html>

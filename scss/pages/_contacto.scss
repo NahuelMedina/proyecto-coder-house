@@ -4,28 +4,75 @@
 @use "../utilities/mixin";
 .contacto-container {
   padding-top: variable.$padding-top;
+  padding: 4rem 1rem;
 
-  .contacto-form-container {
-    form {
-      input {
-        background-color: map.get(maps.$colores, primary-color);
+  .contacto-wrapper {
+    max-width: variable.$width-central;
+    margin: 0 auto;
+
+    .contacto-grid {
+      display: grid;
+      gap: 3rem;
+
+      .contacto-redes {
+        h3 {
+          margin-bottom: 1rem;
+        }
+        .contacto-redes-logos {
+          display: flex;
+          gap: 1.2rem;
+
+          a {
+            font-size: 1.8rem;
+            color: map.get(maps.$colores, tertiary-color);
+            transition: transform 0.2s ease-in, color 0.2s ease-in;
+
+            &:hover {
+              transform: translateY(-3px);
+              color: map.get(maps.$colores, second-color);
+            }
+          }
+        }
       }
+    }
+    .contacto-form-container {
+      form {
+        display: grid;
+        gap: 1.2rem;
 
-      textarea {
-        resize: none;
-        background-color: map.get(maps.$colores, primary-color);
-      }
+        label {
+          display: flex;
+          flex-direction: column;
+          font-size: 0.9rem;
+          gap: 0.4rem;
+        }
 
-      button {
-        @include mixin.button(
-          100px,
-          1rem,
-          map.get(maps.$colores, second-color),
-          map.get(maps.$colores, tertiary-color),
-          map.get(maps.$colores, tertiary-color)
-        );
-        &:hover {
-          box-shadow: 4px 5px 0px 0px map.get(maps.$colores, contrast-color);
+        input,
+        textarea {
+          padding: 0.7rem;
+          border-radius: 0.4rem;
+          background-color: transparent;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: map.get(maps.$colores, second-color);
+        }
+
+        input:focus,
+        textarea:focus {
+          outline: none;
+          border-color: map.get(maps.$colores, tertiary-color);
+        }
+
+        button {
+          @include mixin.button(
+            100px,
+            1rem,
+            map.get(maps.$colores, second-color),
+            map.get(maps.$colores, tertiary-color),
+            map.get(maps.$colores, tertiary-color)
+          );
+          &:hover {
+            box-shadow: 4px 5px 0px 0px map.get(maps.$colores, contrast-color);
+          }
         }
       }
     }
