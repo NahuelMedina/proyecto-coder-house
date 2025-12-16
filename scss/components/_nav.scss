@@ -2,54 +2,6 @@
 @use "sass:map";
 @use "../utilities/maps.scss" as maps;
 @use "../utilities/mixin";
-// header {
-//   position: fixed;
-//   z-index: 10;
-//   top: 0;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   width: 100%;
-//   max-width: variable.$width-maximo-pc;
-
-//   .nav-container {
-//     @include mixin.flex(flex, center, center);
-
-//     height: 5rem;
-//     background: linear-gradient(
-//       180deg,
-//       map.get(maps.$colores, nav-background) 100%
-//     );
-//     border-bottom: 2px solid map.get(maps.$colores, tertiary-color);
-//     .nav-img {
-//       display: none;
-//       width: 4rem;
-//     }
-//     .nav-ul {
-//       display: flex;
-//       align-items: center;
-//       gap: 20px;
-//       li {
-//         a {
-//           color: map.get(maps.$colores, second-color);
-//           font-size: 1.2rem;
-
-//           &:hover {
-//             color: map.get(maps.$colores, tertiary-color);
-//           }
-//           &.active {
-//             color: map.get(maps.$colores, tertiary-color);
-//             text-decoration: underline solid
-//               map.get(maps.$colores, tertiary-color);
-//           }
-//         }
-//       }
-//     }
-//   }
-//   .hamburguesa {
-//     display: none;
-//   }
-// }
-// Header centrado y fijo
 .header-fixed {
   position: fixed;
   top: 0;
@@ -57,34 +9,38 @@
   transform: translateX(-50%);
   width: 100%;
   max-width: variable.$width-layout;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
+  align-items: center;
   justify-content: center;
   z-index: 1000;
   background-color: map.get(maps.$colores, nav-background);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border: 3px solid map.get(maps.$colores, tertiary-color);
+  border: 3px solid map.get(maps.$colores, border-colors);
   border-top: none;
   border-bottom: none;
 }
 
-// Contenedor de navegación
 .nav-container {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  width: 100%;
 
   .header-inner {
-    width: variable.$width-layout;
-    max-width: 100%;
+    width: 100%;
+    max-width: variable.$width-layout;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 0.5rem 1rem;
   }
 
   .nav-img {
     width: 60px;
     height: auto;
+    border-radius: 50%;
   }
 
   .nav-ul {
@@ -94,11 +50,15 @@
     .nav-link {
       font-weight: 500;
       font-size: 1rem;
-      color: map.get(maps.$colores, second-color);
+      color: map.get(maps.$colores, primary-color);
 
       &.active,
       &:hover {
-        color: map.get(maps.$colores, tertiary-color);
+        color: map.get(maps.$colores, secondary-color);
+      }
+      &:focus-visible {
+        outline: 2px solid map.get(maps.$colores, secondary-color);
+        outline-offset: 4px;
       }
     }
   }
@@ -107,5 +67,6 @@
     position: absolute;
     right: 1rem;
     box-shadow: none !important;
+    font-size: xx-large;
   }
 }

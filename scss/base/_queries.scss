@@ -1,43 +1,152 @@
-@media (max-width: 991px) {
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+@use "../base/variables" as variable;
+@use "sass:map";
+@use "../utilities/maps" as maps;
+
+/* Tablet */
+@media (max-width: 992px) {
+  .layout {
+    padding: 1.5rem;
+
+    // HEADER
+    .nav-container {
+      position: relative;
+      .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: map.get(maps.$colores, nav-background);
+        padding: 1rem 0;
+        box-shadow: variable.$shadow-box;
+        z-index: 999;
+
+        .navbar-nav {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+      }
+    }
+
+    // HERO
+    .hero {
+      height: auto;
+      padding: 2rem 1rem;
+
+      .card-animation {
+        height: 100vh;
+      }
+      .image-hero {
+        width: 9rem;
+        height: 9rem;
+      }
+    }
+
+    // PROYECTOS
+    .proyectos-container {
+      .proyectos-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+
+        .card-proyect {
+          &:last-child {
+            grid-column: 1 / -1;
+            max-width: 420px;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+
+    // EDUCACION
+    .educacion-container {
+      grid-template-columns: 1fr;
+    }
   }
 
-  header .hamburguesa {
-    display: block;
-    font-size: xx-large;
-    cursor: pointer;
-  }
-
-  header .nav-container .menu {
-    display: none;
+  // FOOTER
+  .footer {
+    .footer-wrapper {
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+    }
   }
 }
 
-@media (min-width: 768px) {
-  .contacto-grid {
-    grid-template-columns: 1fr 1.2fr;
-    align-items: start;
+/* Mobile */
+@media (max-width: 575px) {
+  .layout {
+    padding: 1rem;
+
+    // HEADER
+
+    .nav-container {
+      position: relative;
+      .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: map.get(maps.$colores, nav-background);
+        padding: 1rem 0;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        z-index: 999;
+
+        .header-inner {
+          justify-content: space-between;
+          .navbar-nav {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+          }
+        }
+      }
+    }
+
+    // HERO
+    .hero {
+      height: auto;
+      padding: 2rem 1rem;
+
+      .card-animation {
+        height: 100vh;
+      }
+      .image-hero {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+
+    // SOBRE MI
+    .sobre-mi__img {
+      display: none;
+    }
+    // PROYECTOS
+    .proyectos-container {
+      .proyectos-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        justify-items: center;
+
+        .card-proyect:last-child {
+          grid-column: auto;
+          width: 100%;
+          max-width: 450px;
+        }
+      }
+    }
+
+    // EDUCACION
+    .educacion-container {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
-@media (max-width: 767px) {
-  .educacion-div2 > div {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .footer-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .card-buttons {
-    flex-direction: column;
+@media (max-width: 336px) {
+  .hero {
+    .image-hero {
+      display: none;
+    }
   }
 }

@@ -10,18 +10,58 @@
   text-decoration: none;
   border: none;
   outline: none;
-  color: map.get(maps.$colores, second-color);
+  color: map.get(maps.$colores, text-color);
 }
 body {
   background-color: map.get(maps.$colores, color-background);
   .layout {
-    background-color: map.get(maps.$colores, primary-color);
-    width: 100%;
+    background-color: map.get(maps.$colores, layout-color);
     max-width: variable.$width-layout;
     margin: 0 auto;
     padding: variable.$padding-general;
-    border: 3px solid map.get(maps.$colores, tertiary-color);
+    border: 3px solid map.get(maps.$colores, border-colors);
     border-top: none;
     border-bottom: none;
+
+    section {
+      width: 100%;
+      h1,
+      h2,
+      h3 {
+        color: map.get(maps.$colores, text-color);
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 2.8rem;
+        font-weight: 700;
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.6;
+        color: map.get(maps.$colores, text-color);
+        margin: 0 0 1rem;
+        opacity: 0.8;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
   }
 }
